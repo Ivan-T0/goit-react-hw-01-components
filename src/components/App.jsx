@@ -19,10 +19,8 @@ const App = () => {
   avatar={user.avatar}
   stats={user.stats}
     />
-        <Statistics 
-          key={data.label}
-          label={data.label}  
-        />
+        <Statistics data={data} />
+        
         <FriendList friends={friends}
           key={friends.id}
           avatar={friends.avatar}
