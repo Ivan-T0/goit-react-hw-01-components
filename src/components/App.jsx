@@ -3,13 +3,12 @@ import Statistics from './Statistics/Statistics'
 import FriendList from './FriendList/FriendList'
 import TransactionHistory from './TransactionHistory/TransactionHistory'
 import PropTypes from "prop-types";
-import cl from '../components/StyledComponentsList/CardProfileModule.module.css'
 import user from "./data/user.json"
 import data from './data/data.json'
 import transactions from './data/transactions.json'
 import friends from './data/friends.json'
-// import { type } from '@testing-library/user-event/dist/type';
-  const App = () => {
+
+const App = () => {
     return (
       <div>
         <Profile
@@ -66,4 +65,10 @@ TransactionHistory.propTypes = {
   amount: PropTypes.number,
   currency: PropTypes.string,
 
+}
+FriendList.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  isOnline: PropTypes.bool,
+  id:PropTypes.number,
 }
