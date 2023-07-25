@@ -3,7 +3,7 @@ import cl from '../StyledComponentsList/CardProfileModule.module.css'
 
 const TransactionHistory = () => {
   return (
-<table className={cl.transactionHistory}>
+    <table className={cl.transactionHistory}>
       <thead>
         <tr>
           <th>Type</th>
@@ -23,5 +23,6 @@ const TransactionHistory = () => {
       </tbody>
     </table>
   );
-}
-export default TransactionHistory
+};
+
+export default TransactionHistory;

@@ -9,33 +9,21 @@ import transactions from './data/transactions.json'
 import friends from './data/friends.json'
 
 const App = () => {
-    return (
-      <div>
-        <Profile
-  key={user.name}
-  username={user.username}
-  tag={user.tag}
-  location={user.location}
-  avatar={user.avatar}
-  stats={user.stats}
-    />
-        <Statistics data={data} />
-        
-        <FriendList friends={friends}
-          key={friends.id}
-          avatar={friends.avatar}
-          name={friends.name}
-          isOnline={friends.isOnline}
-        />;
-        <TransactionHistory items={transactions}
-          key={transactions.id}
-          type={transactions.type}
-          amount={transactions.amount}
-          currency={transactions.currency}
-        />;
+  return (
+    <div>
+      <Profile
+        id={user.id}
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      <Statistics data={data} />
+
+      <FriendList friends={friends} />
+      <TransactionHistory transactions={transactions} />
     </div>
-    
-   
   );
 };
 export default App
@@ -46,27 +34,22 @@ Profile.propTypes = {
   location: PropTypes.string,
   avatar: PropTypes.string,
   stats: PropTypes.object
-  
-}
+};
+
 Statistics.propTypes = {
   label: PropTypes.string
-}
+};
+
 FriendList.propTypes = {
   id: PropTypes.string,
   avatar: PropTypes.string,
   name: PropTypes.string,
-  isOnline:PropTypes.bool
-}
+  isOnline: PropTypes.bool,
+};
+
 TransactionHistory.propTypes = {
   id: PropTypes.string,
   type: PropTypes.string,
   amount: PropTypes.number,
   currency: PropTypes.string,
-
-}
-FriendList.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
-  id:PropTypes.number,
-}
+};
