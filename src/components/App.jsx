@@ -1,16 +1,69 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+import Profile from './Profile/Profile'
+import Statistics from './Statistics/Statistics'
+import FriendList from './FriendList/FriendList'
+import TransactionHistory from './TransactionHistory/TransactionHistory'
+import PropTypes from "prop-types";
+import cl from '../components/StyledComponentsList/CardProfileModule.module.css'
+import user from "./data/user.json"
+import data from './data/data.json'
+import transactions from './data/transactions.json'
+import friends from './data/friends.json'
+// import { type } from '@testing-library/user-event/dist/type';
+  const App = () => {
+    return (
+      <div>
+        <Profile
+  key={user.name}
+  username={user.username}
+  tag={user.tag}
+  location={user.location}
+  avatar={user.avatar}
+  stats={user.stats}
+    />
+        <Statistics 
+          key={data.label}
+          label={data.label}  
+        />
+        <FriendList friends={friends}
+          key={friends.id}
+          avatar={friends.avatar}
+          name={friends.name}
+          isOnline={friends.isOnline}
+        />;
+        <TransactionHistory items={transactions}
+          key={transactions.id}
+          type={transactions.type}
+          amount={transactions.amount}
+          currency={transactions.currency}
+        />;
     </div>
+    
+   
   );
 };
+export default App
+Profile.propTypes = {
+  id: PropTypes.string,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object
+  
+}
+Statistics.propTypes = {
+  label: PropTypes.string
+}
+FriendList.propTypes = {
+  id: PropTypes.string,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  isOnline:PropTypes.bool
+}
+TransactionHistory.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string,
+  amount: PropTypes.number,
+  currency: PropTypes.string,
+
+}
