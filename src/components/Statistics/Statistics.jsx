@@ -3,6 +3,7 @@ import cl from '../StyledComponentsList/CardProfileModule.module.css'
 const Statistics = ({ data, title }) => {
   return (
     <section className="statistics">
+       <h2 className={title} >Upload stats</h2>
       {title && <h2>{title}</h2>}
 
       <ul className={cl.statlist}>
