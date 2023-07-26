@@ -2,7 +2,7 @@ import cl from '../StyledComponentsList/CardProfileModule.module.css'
  const Profile = ({ username, tag, location, avatar, stats } ) => {
     
     return (
-       <div className="profile">
+       
   <div className={cl.description}>
     <img
       src={avatar}
@@ -12,10 +12,8 @@ import cl from '../StyledComponentsList/CardProfileModule.module.css'
     />
     <p className={cl.name}>{username}</p>
     <p className={cl.tag}>{tag}</p>
-    <p className={cl.location}>{location}</p>
-  </div>
-
-  <ul className={cl.stats}>
+          <p className={cl.location}>{location}</p>
+          <ul className={cl.stats}>
     <li>
       <span className={cl.label}>Followers </span>
       <span className={cl.quantity}>{stats.followers}</span>
@@ -29,7 +27,7 @@ import cl from '../StyledComponentsList/CardProfileModule.module.css'
       <span className={cl.quantity}>{stats.likes}</span>
     </li>
   </ul>
-</div>
+  </div>
     )
 };
 export default Profile

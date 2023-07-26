@@ -1,8 +1,10 @@
 // import data from "./data/data.json"
 import cl from '../StyledComponentsList/CardProfileModule.module.css'
-const Statistics = ({ data }) => {
+const Statistics = ({ data, title }) => {
   return (
     <section className="statistics">
+      {title && <h2>{title}</h2>}
+
       <ul className={cl.statlist}>
         {data.map(({ id, label, percentage }) => (
           <li className={cl.item} key={id}>
