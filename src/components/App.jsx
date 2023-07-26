@@ -36,9 +36,11 @@ Profile.propTypes = {
   stats: PropTypes.object
 };
 
+
 Statistics.propTypes = {
   label: PropTypes.string
 };
+
 
 FriendList.propTypes = {
   id: PropTypes.string,
