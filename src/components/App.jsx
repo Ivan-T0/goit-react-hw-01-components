@@ -12,14 +12,14 @@ const App = () => {
   return (
     <div>
       <Profile
-        id={user.id}
+        id={user.username}
         username={user.username}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics data={data} />
+      <Statistics data={data}  />
 
       <FriendList friends={friends} />
       <TransactionHistory transactions={transactions} />
